@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.main{
+    background-color: rgb(254, 255, 255);
+    height: 70%;
+    width: 30%; 
+    margin-left: 25%;
+    margin-top: 25%;
+    border-radius: 10px;
+}
+.button{
+    height:20px;
+    margin-left: 30%;
+}
+.main-heading{
+    margin-left:25%
+}
+h4{
+    display: flex;
+}
+</style>
+<body style="background-color: #0b0b0b;">
+    <div class="main">
+        <h2 class="main-heading"> BMI CALCULATION</h2>
+        <h4 style="margin-left: 5px;"> ENTER YOUR WEIGHT : <input class="height" type="text"></h4>
+        <h4 style="margin-left: 5px;"> ENTER YOUR HEIGHT : <input class="weight" type="text"></h4>
+        <button type="submit" class="button">CALCULATE</button>
+        <hr>
+        <div id="result"></div>
+        
+    </div>
+</body>
+<script>
+    
+    const buttons=document.querySelector('.button')
+
+    buttons.addEventListener('click',function(e){
+        e.preventDefault();
+
+
+        
+    const height=parseInt(document.querySelector('.height').value)
+    const weight=parseInt(document.querySelector('.weight').value)
+    const result=document.querySelector('#result')
+
+    const bmi=(weight/(((height*height)/10000)).toFixed(2))
+    result.innerHTML=`<span> Your BMI : ${bmi}</span>`;
+    });
+</script>
+</html>
